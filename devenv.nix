@@ -2,8 +2,8 @@
 
 {
   packages = [ 
-    pkgs.git
     pkgs.rustup
+    pkgs.qemu
   ];
 
   languages.rust = {
@@ -19,6 +19,12 @@
       "x86_64-unknown-none"
     ];
   };
+
+  scripts.build.exec = "cargo build";
+
+  enterTest = ''
+    cargo test
+  '';
 
   pre-commit.hooks.rustfmt.enable = true;
 }
