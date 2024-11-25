@@ -22,6 +22,10 @@
 
   scripts.build.exec = "cargo build";
 
+  enterShell = ''
+    cargo install bootimage
+  '';
+
   enterTest = ''
     cargo test
   '';
