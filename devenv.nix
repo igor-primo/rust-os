@@ -23,7 +23,7 @@
   scripts.build.exec = "cargo build";
 
   enterShell = ''
-    cargo install bootimage
+    which bootimage >/dev/null 2>&1 || cargo install bootimage
   '';
 
   enterTest = ''
